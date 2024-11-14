@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Website Jumpstart</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+  <style>
+    body {
+      width: 400px;
+      min-height: 500px;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    .dark {
+      background-color: #1a1a1a;
+      color: #ffffff;
+    }
+    .url-item {
+      transition: transform 0.2s;
+    }
+    .url-item:hover {
+      transform: translateX(4px);
+    }
+    .btn {
+      transition: all 0.2s;
+    }
+    .btn:hover {
+      transform: scale(1.02);
+    }
+    .btn:active {
+      transform: scale(0.98);
+    }
+  </style>
+</head>
+<body class="p-4">
+  <div class="flex justify-between items-center mb-6">
+    <h1 class="text-2xl font-bold">Startup Sites</h1>
+    <div class="flex gap-2">
+      <button id="themeToggle" class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>
+        </svg>
+      </button>
+      <button id="settingsToggle" class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <div id="settingsPanel" class="hidden mb-4 p-4 bg-gray-100 dark:bg-gray-800 rounded-lg">
+    <h2 class="text-lg font-semibold mb-3">Settings</h2>
+    <div class="flex items-center mb-2">
+      <input type="checkbox" id="openInNewWindow" class="mr-2">
+      <label for="openInNewWindow">Open sites in new window</label>
+    </div>
+  </div>
+
+  <div class="mb-4">
+    <form id="addUrlForm" class="flex gap-2">
+      <input type="url" id="urlInput" placeholder="Enter website URL" required
+             class="flex-1 px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500
+                    dark:bg-gray-700 dark:border-gray-600">
+      <button type="submit" 
+              class="btn px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 
+                     focus:outline-none focus:ring-2 focus:ring-blue-500">
+        Add
+      </button>
+    </form>
+  </div>
+
+  <div id="urlList" class="space-y-2"></div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

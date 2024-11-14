@@ -1,0 +1,17 @@
+{
+  "manifest_version": 3,
+  "name": "Startup Sites Manager",
+  "version": "1.0",
+  "description": "Automatically opens specified websites when Chrome starts",
+  "permissions": ["storage", "tabs"],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "icons": {
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}
